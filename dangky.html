@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dang ky</title>
+    
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+    <p>Khách Hàng mới <a href="dangky.html" data-bs-toggle = "modal" data-bs-target = "#myForm">Tạo Tài Khoản</a></p>
+    <div class="col-12">
+        <div class="modal" id="myForm">
+            <div class="modal-dialog modal-fade modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="h1 display-6">THÔNG TIN CÁ NHÂN</p>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>   
+                    </div>
+                    <div class="modal-body">
+                        <div class="form">
+                            <form action="">
+                                <div class="form-group">
+                                    <label for="ma">Mã Giới Thiệu </label>
+                                    <input type="text" onblur="isValidInput()" name="txtMa" id="txtMa" class="form-control" placeholder="Mã : MS-123">
+                                    <span class="err" id="errMa">(*)</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ten">Họ tên:</label>
+                                    <input type="text" onblur="isValidInput()" name="txtTen" id="txtTen" class="form-control" placeholder="Họ tên: Nguyễn Tấn Tài">
+                                    <span class="err" id="errTen">(*)</span>
+                                </div>
+                                
+                                <!-- <div class="form-group">
+                                    <label for="lop">Lớp:</label>
+                                    <input type="text" onblur="isValidInput()" name="txtLop" id="txtLop" class="form-control" placeholder="DHKTPM16ATT">
+                                    <span class="err" id="errLop">(*)</span>
+                                </div> -->
+                                <div class="form-group">
+                                    <label for="ngayTG">Ngày tham gia:</label>
+                                    <input type="date" onblur="isValidInput()" name="ngayTG" id="ngayTG" class="form-control" placeholder="mm/dd/yyyy">
+                                    <span class="err" id="errNgay">(*)</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sdt">Số điện thoại:</label>
+                                    <input type="text" onblur="isValidInput()" name="sdt" id="sdt" class="form-control" placeholder="SĐT: 0xxx-xxx-xxx">
+                                    <span class="err" id="errSdt">(*)</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="text" onblur="isValidInput()" name="email" id="email" class="form-control" placeholder="EMail: xxxxxx@gmail.com">
+                                    <span class="err" id="errEmail">(*)</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-info btn-block w-100" type="button" onclick="submit()">Lưu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="successModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Đăng ký thành công</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Bạn đã đăng ký thành công!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./js/jquery-3.7.1.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./js/main.js"></script>
+
+</body>
+</html>

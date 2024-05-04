@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --main-color: #fda702;
+    --second-color: #fafafa;
+    --text-color: #02171d;
+    --bg-color: #fff;
+
+    --box-shadow: 2px 2px 10px 4px rgb(14 55 54 / 15%);
+}
+
+.container {
+    background-color: var(--main-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 1px rgb(0, 0, 0, 12%);
+    padding: 45px;
+    margin: 15px 0;
+    width: 950px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "images info"
+        "images description";
+    grid-gap: 35px;
+}
+
+.box .images {
+    grid-area: images;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "active active acitve"
+        "idle idle idle";
+    grid-gap: 5px
+}
+
+.box .images .img-holder img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.box .images .img-holder img {
+    grid-area: active;
+}
+
+.box .images .img-holder:not(.active):hover {
+    opacity: 0.95;
+    cursor: pointer;
+}
+
+.box .basic-info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.box .basic-info .rate{
+    color: var(--main-color);
+}
+.box .basic-info span{
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.box .basic-info .option a {
+    color: var(--bg-color);
+    background-color: var(--text-color);
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    border-radius: 5px;
+}
+.box .basic-info .option a:hover{
+    background-color:var(--main-color) ;
+
+}
+.box .description {
+
+    grid-area: description;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.box .description p{
+    color: var(--main-color);
+    font-size: 14px;
+    line-height: 1.5;
+}
+.box .description .features{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--text-color);
+}
+.box .description .features{
+   margin-right: 5px;
+}
+.box .description .features .bx {
+   color: var(--main-color);
+}
+.box .description .social{
+    list-style-type: square;
+    display: flex;
+}
+.box .description .social a{
+    margin-right: 15px;
+    color: var(--text-color);
+}
+.box .description .social a:hover{
+    color: var(--text-color);
+}

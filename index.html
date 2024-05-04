@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bán loa website</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <a href="#home" class="logo" style="text-decoration: none;"><i class='bx bx-speaker' style="text-decoration: none;"></i>Music</a>
+        <ul class="navbar">
+            <li><a href="#home" style="text-decoration: none;">Trang chủ</a></li>
+            <li><a href="#new" style="text-decoration: none;">Sản phẩm mới</a></li>
+            <li><a href="#product" style="text-decoration: none;">Sản phẩm</a></li>
+            <li><a href="#reviews" style="text-decoration: none;">Đánh giá</a></li>
+            <li><a href="#footer" style="text-decoration: none;">Liên hệ</a></li>
+            <li><a href="sitemap.html" style="text-decoration: none;">SiteMap</a></li>
+        </ul>
+        <div class="header-icons">
+            <i class='bx bx-menu' id="menu-icon" tabindex="0"></i>
+            <i class='bx bx-search' id="search-icon" tabindex="0"></i>
+            <i class='bx bx-cart' id="cart-icon" tabindex="0"></i>
+            <i class='bx bx-user' id="user-icon" tabindex="0"></i>
+        </div>
+
+        <div class="search-box">
+            <input type="search" name="" id="" placeholder="Tìm Kiếm...">
+        </div>
+        <div class="cart">
+            <div class="box">
+                <img src="./img/loa1.webp" alt="">
+                <div class="text">
+                    <h3>Loa Bluetooh Alpha Work W38</h3>
+                    <span>1.490.000</span>
+                    <span>x1</span>
+                </div>
+                <i class='bx bx-trash-alt'></i>
+            </div>
+
+            <div class="box">
+                <img src="./img/loa2.webp" alt="">
+                <div class="text"> 
+                    <h3>Loa BLuetooth Harman Kardon</h3>
+                    <span>7.490.000</span>
+                    <span>x1</span>
+                </div>
+                <i class='bx bx-trash-alt'></i>
+            </div>
+            <h2>Tổng cộng: 8.980.000</h2>
+            <a href="checkout.html" class="btn">Thanh Toán</a>
+        </div>
+
+        <div class="user">
+            <h2>Đăng nhập</h2>
+            <input type="email" name="" id="" placeholder="Nhập email của bạn">
+            <input type="password" name="" id="" placeholder="Password">
+            <input type="submit" name="" id="" value="Login" class="login-btn">
+            <p>Quên mật khẩu <a href="#">Đặt lại mật khẩu</a></p>
+            <p>Khách Hàng mới <a href="#" data-bs-toggle="modal" data-bs-target="#myForm">Tạo Tài Khoản</a></p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="modal" id="myForm">
+                    <div class="modal-dialog modal-fade modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <p class="h1 display-6">THÔNG TIN CÁ NHÂN</p>
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form">
+                                    <form action="" id="frmDangky">
+                                        <div class="form-group">
+                                            <label for="ma">Mã Giới Thiệu</label>
+                                            <input type="text" onblur="isValidInput()" name="txtMa" id="txtMa" class="form-control" placeholder="Mã: MS-123">
+                                            <span class="err" id="errMa">(*)</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="ten">Họ tên:</label>
+                                            <input type="text" onblur="isValidInput()" name="txtTen" id="txtTen" class="form-control" placeholder="Họ tên: Nguyen Tan Tai">
+                                            <span class="err" id="errTen">(*)</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="ngayTG">Ngày tham gia:</label>
+                                            <input type="date" onblur="isValidInput()" name="ngayTG" id="ngayTG" class="form-control" placeholder="mm/dd/yyyy">
+                                            <span class="err" id="errNgay">(*)</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="sdt">Số điện thoại:</label>
+                                            <input type="text" onblur="isValidInput()" name="sdt" id="sdt" class="form-control" placeholder="SĐT: 0xxx-xxx-xxx">
+                                            <span class="err" id="errSdt">(*)</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email:</label>
+                                            <input type="text" onblur="isValidInput()" name="email" id="email" class="form-control" placeholder="Email: xxxxxx@gmail.com">
+                                            <span class="err" id="errEmail">(*)</span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-info btn-block w-100" type="button" onclick="submit()">Lưu</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="successModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Đăng ký thành công</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Bạn đã đăng ký thành công!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="home" id="home">
+            <div class="home-text">
+                <span>Mua Ngay</span>
+                <h1>New Arrival<br>Sản Phẩm Mới</h1>
+                <a href="" class="btn">Mua Ngay</a>
+            </div>
+            <div class="home-img">
+                <img src="./img/home.jpg" alt="" id="jmage">
+            </div>
+        </div>
+
+    </section>
+    <section class="new" id="new">
+        <div class="heading">
+            <h1>Hàng <span>Mới</span></h1>
+        </div>
+        <div class="swiper new-arival">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <img src="./img/new1.webp" alt="">
+                    <div class="content">
+                        <a href="#" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="./img/new2.jpg" alt="">
+                    <div class="content">
+                        <a href="#" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="./img/new3.webp" alt="">
+                    <div class="content">
+                        <a href="#" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="./img/new4.webp" alt="">
+                    <div class="content">
+                        <a href="#" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="./img/new5.webp" alt="">
+                    <div class="content">
+                        <a href="#" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="./img/new6.webp" alt="">
+                    <div class="content">
+                        <a href="#" class="btn">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product" id="product">
+        <div class="heading">
+            <h1>Sản <span>Phẩm</span></h1>
+        </div>
+        <div class="product-container" id="product-container">
+            <div class="pox">
+                <img src="./img/p1.webp" alt="" class="clickable-image">
+                <div class="content">
+                    <h2>Loa soundbar POLK SIGNA S2</h2>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                    <span>6.900.000</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+
+            <div class="pox">
+                <img src="./img/p2.webp" alt="" class="clickable-image">
+                <div class="content">
+                    <h2>Loa soundbar POLK MagniFi MAX AX SR</h2>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                    <span>24.900.000</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+
+            <div class="pox">
+                <img src="./img/p3.webp" alt="" class="clickable-image">
+                <div class="content">
+                    <h2>Loa JBL power color</h2>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                    <span>7.900.000</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <div class="pox">
+                <img src="./img/p4.webp" alt="" class="clickable-image">
+                <div class="content">
+                    <h2>Loa pass dài A36</h2>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                    <span>2.900.000</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <div class="pox">
+                <img src="./img/p5.webp" alt="" class="clickable-image">
+                <div class="content">
+                    <h2>Loa âm trần ATZ72</h2>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                    <span>17.900.000</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <div class="pox">
+                <img src="./img/p6.webp" alt="" class="clickable-image">
+                <div class="content">
+                    <h2>Set loa logitech A37</h2>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                    <span>4.500.000</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <div class="pox">
+                <img src="./img/p7.webp" alt="" class="clickable-image">
+                <div class="content">
+                    <h2>Loa Fulhen fl32</h2>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                    <span>12.000.000</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <div class="pox">
+                <img src="./img/p8.webp" alt="" class="clickable-image">
+                <div class="content">
+                    <h2>Loa Gaming T32</h2>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                    <span>9.200.000</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <div class="pox">
+                <img src="./img/p9.webp" alt="" class="clickable-image">
+                <div class="content">
+                    <h2>Loa Gaming T32</h2>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                    <span>9.700.000</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <div class="pox">
+                <img src="./img/p10.webp" alt="" class="clickable-image">
+                <div class="content">
+                    <h2>Loa combo Mic logitech</h2>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                    <span>10.200.000</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <div class="pox">
+                <img src="./img/p11.webp" alt="" class="clickable-image">
+                <div class="content">
+                    <h2>Loa Gaming T32</h2>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                    <span>17.200.000</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <div class="pox">
+                <img src="./img/p12.webp" alt="" class="clickable-image">
+                <div class="content">
+                    <h2>Loa JBL limited edition </h2>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                    <span>9.200.000</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <div class="pox">
+                <img src="./img/p13.webp" alt="" class="clickable-image">
+                <div class="content">
+                    <h2>Tai nghe Gaming T32</h2>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                    <span>9.200.000</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <div class="pox">
+                <img src="./img/p14.webp" alt="" class="clickable-image">
+                <div class="content">
+                    <h2>Loa Gaming N45</h2>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                    <span>9.200.000</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="reviews" id="reviews">
+        <div class="heading">
+            <h1>Khách <span>Hàng</span></h1>
+        </div>
+        <div class="reviews-container">
+            <div class="box">
+                <img src="./img/r1.jpg" alt="">
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <p>Tiêu chí mà tất cả những khách hàng mua loa đều đặt lên hàng đầu đó chính là chất lượng âm thanh của
+                    chiếc loa đó. Một chiếc loa Bluetooth được đánh giá là chất lượng thì phải có khả năng thể hiện các
+                    âm bass, treble đầy đủ, trong trẻo và đặc biệt khi sử dụng với âm lượng lớn loa không bị tình trạng
+                    rè</p>
+                <h2>John Lowkey</h2>
+            </div>
+            <div class="box">
+                <img src="./img/r2.jpg" alt="">
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <p>Đối với loa Bluetooth, trọng lượng nặng chắc chắn sẽ là một sự lựa chọn không hề tối ưu cho bạn khi
+                    sử dụng, đặc biệt là những chuyến đi du lịch, khi mà nhu cầu di chuyển của bạn là rất lớn</p>
+                <h2>Johny Mice</h2>
+            </div>
+            <div class="box">
+                <img src="./img/r3.jpg" alt="">
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <p>Loa Samsung Music Frame có cấu hình loa chất lượng bao gồm hai loa trầm, hai loa tweeter và hai trình
+                    điều khiển tầm trung, ngoài ra còn được trang bị thêm các ống dẫn sóng giúp âm thanh được truyền đi
+                    xa và rộng hơn trong không gian</p>
+                <h2>Tam No</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer" id="footer">
+        <div class="footer-box">
+            <h2>MUSIC</h2>
+            <p>Nếu bạn cần hỗ trợ và tư vấn hay hãy truy cập và liên hệ với chúng tôi</p>
+            <div class="social">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href=""><i class='bx bxl-twitter'></i></a>
+                <a href=""><i class='bx bxl-instagram'></i></a>
+                <a href=""><i class='bx bxl-tiktok'></i></a>
+
+            </div>
+        </div>
+        <div class="footer-box">
+            <h3>Tư Vấn</h3>
+            <li><a href="">Sản Phẩm</a></li>
+            <li><a href="">Liên hệ và hỗ trợ</a></li>
+            <li><a href="">Chính Sách</a></li>
+            <li><a href="">Điều Khoản Sử Dụng</a></li>
+            <li><a href="">Các câu hỏi liên quan</a></li>
+        </div>
+        <div class="footer-box">
+            <h3>Chi nhánh</h3>
+            <li><a href="">Ấp 5 xã Bình Mỹ TP.HCM</a></li>
+            <li><a href="">Nguyễn Văn Bảo Gò Vấp</a></li>
+            <li><a href="">Hai Bà Trưng quận 1</a></li>
+            <li><a href="">Cộng Hoà Trường Chinh</a></li>
+            <li><a href="">Song Hành huyện Hóc Môn</a></li>
+        </div>
+        <div class="footer-box">
+            <h3>Hình Thức Thanh Toán</h3>
+            <div class="payment">
+                <img src="./img/vjsa.jpg" alt="">
+                <img src="./img/paypal.png" alt="">
+                <img src="./img/master.png" alt="">
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+
+
+
+</body>
+
+</html>
